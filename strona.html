@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+  .menu a {
+      color: rgb(0, 255, 0);
+      text-decoration: none;
+  }
+  </style>
+  </head>
+
+  <body>
+      <ul class="menu">
+      <li><a id="onet" href="#">Onet</a></li>
+      <li><a id="wp" href="#">WP</a></li>
+      <li><a id="interia" href="#">interia</a></li>
+      <li><a id="gmail" href="#">Gmail</a></li> 
+      <li><a id="o2" href="#">o2</a></li>
+      </ul>
+      <div id="tresc">Kliknij w jakis link menu</div>
+      <a href="https://interia.pl">interia</a>
+      <script>
+        var stronki = {
+            onet: "Witamy na onecie",
+            wp: "Witamy na WP",
+            interia: "Tu interia.",
+            gmail: "Witamy na gmailu",
+            o2:"Siema jestes na o2"
+        }
+        var linki = document.querySelectorAll(".menu a");
+        var tresc = document.getElementById("tresc");
+        function klikLink(event) {
+            tresc.innerHTML = stronki[event.target.id];
+        }
+        for(var i = 0; i < linki.length; i++) {
+            linki[i].onclick = klikLink;
+        }
+</script>
+</body>
+</html>
